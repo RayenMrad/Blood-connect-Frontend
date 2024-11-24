@@ -40,7 +40,7 @@ function Body() {
     if (user) {
       // Route based on role
       if (user.role === "admin") navigate("/BloodStock");
-      else if (user.role === "hospital") navigate("/requistdon");
+      else if (user.role === "hospital") navigate("/HopitalRequestBlood");
       else if (user.role === "donor") navigate("/DonateBlood");
     } else {
       // Set an error message if login fails
