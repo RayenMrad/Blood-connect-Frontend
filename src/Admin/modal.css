@@ -1,0 +1,156 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    z-index: 1000;
+    transition: opacity 0.3s ease; 
+    color: black;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background: linear-gradient(to bottom, 
+      #9c0514 0%,     /* Even lighter red, closer to pink */
+      #fff 15%);     /* White at 30% */
+  
+  
+
+
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%; /* Makes the modal width responsive */
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transform: translateY(-20px); /* Initial position for a sliding effect */
+    opacity: 0;
+    animation: modalIn 0.3s forwards; /* Animation for smooth appearance */
+  }
+  
+  /* Animation for modal sliding in */
+  @keyframes modalIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Modal Header (Optional if you want a title) */
+  .modal-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Textarea */
+  textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 1rem;
+    resize: vertical; /* Allows vertical resize */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+  }
+  
+  textarea:focus {
+    border-color: #28a745; /* Highlight border on focus */
+    outline: none;
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Buttons */
+  .btn-send,
+  .btn-cancel {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  }
+  
+  .btn-send {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-send:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Subtle hover effect */
+  }
+  
+  .btn-send:active {
+    transform: translateY(0); /* Button click effect */
+  }
+  
+  .btn-cancel {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+  
+  .btn-cancel:active {
+    transform: translateY(0);
+  }
+  
+  /* Close Button (Optional if you need one) */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #dc3545;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 600px) {
+    .modal-content {
+      width: 95%; /* Make modal smaller on mobile */
+      padding: 20px;
+    }
+  
+    .modal-header {
+      font-size: 1.3rem;
+    }
+  
+    .btn-send,
+    .btn-cancel {
+      font-size: 0.9rem; /* Adjust button size for smaller screens */
+    }
+  }
+  
